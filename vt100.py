@@ -24,5 +24,20 @@ class vt100:
     return self.esc + '];' + name + chr(7)
 
 
+  @classmethod
+  def cursor_pos(self, x = 0, y = 0):
+
+     try:
+       x_s = str(x)
+     except: 
+       x_s = '0'
+
+     try:
+       y_s = str(y)
+     except: 
+       y_s = '0'
+
+     return self.esc + '[' + x_s + ';' + y_s + 'H'
+
 ## EOF ##
 
